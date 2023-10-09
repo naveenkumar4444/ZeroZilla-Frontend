@@ -42,7 +42,7 @@ export default function Header({ setSearch }) {
               <span className="absolute -inset-1.5" />
               <BsBag className="h-6 w-6" />
               <span className="absolute top-0 -right-2 bg-indigo-600 text-white px-1 rounded-full text-center text-xs">
-                {cartItems.length}
+                {cartItems && cartItems.length}
               </span>
             </a>
 
