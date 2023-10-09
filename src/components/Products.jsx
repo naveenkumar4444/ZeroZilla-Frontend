@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import Loader from "./Loader";
 import axios from "axios";
 import CartButton from "./CartButton";
+import toast from "react-hot-toast";
 
 function Products({ search }) {
   const [data, setData] = useState([]);

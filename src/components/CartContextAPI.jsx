@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const CartContext = createContext();
 
@@ -13,6 +14,7 @@ export const CartContextAPI = ({ children }) => {
     data.push(product);
     localStorage.setItem("ZeroZillaCart", JSON.stringify(data));
     setCartItems(data);
+    toast.success("Added to bag.")
   };
 
   const removeItemFromCart = (id) => {
@@ -20,6 +22,7 @@ export const CartContextAPI = ({ children }) => {
     const filteredData = data.filter((d) => d.id != id);
     localStorage.setItem("ZeroZillaCart", JSON.stringify(filteredData));
     setCartItems(filteredData);
+    toast.success("Removed from bag.")
   };
 
   useEffect(() => {
